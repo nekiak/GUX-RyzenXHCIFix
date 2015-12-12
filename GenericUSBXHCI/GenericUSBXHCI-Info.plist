@@ -43,7 +43,7 @@
 			<key>IOUserClientClass</key>
 			<string>IOUSBControllerUserClient</string>
 			<key>IOProbeScore</key>
-			<integer>1</integer>
+			<integer>2000</integer>
 			<key>ASMediaEDLTAFix</key>
 			<true/>
 			<key>IntelDoze</key>
