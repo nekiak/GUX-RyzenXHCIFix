@@ -21,12 +21,12 @@ INSTALLDIR=Universal
 .PHONY: all
 all:
 	xcodebuild clean $(OPTIONS) -configuration "El Capitan"
-	make -f xhcdump/xhcdump.mak
+	make -f xhcdump.mak
 
 .PHONY: clean
 clean:
 	xcodebuild clean $(OPTIONS) -configuration "El Capitan"
-	rm ./xhcdump/xhcdump
+	rm ./xhcdump
 
 .PHONY: update_kernelcache
 update_kernelcache:
@@ -47,7 +47,7 @@ distribute:
 	#cp -R ./Build/Yosemite ./Distribute
 	#cp -R ./Build/Universal ./Distribute
 	#cp -R ./Build/El\ Capitan ./Distribute
-	cp ./xhcdump/xhcdump ./Distribute
+	cp ./xhcdump ./Distribute
 	find ./Distribute -path *.DS_Store -delete
 	find ./Distribute -path *.dSYM -exec echo rm -r {} \; >/tmp/org.voodoo.rm.dsym.sh
 	chmod +x /tmp/org.voodoo.rm.dsym.sh
