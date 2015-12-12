@@ -11,7 +11,7 @@
 #include "XHCITRB.h"
 #include "XHCITypes.h"
 #include <IOKit/IOFilterInterruptEventSource.h>
-#include <IOKit/usb/IOUSBRootHubDevice.h>
+#include "IOUSBRootHubDevice.h"
 
 #define CLASS GenericUSBXHCI
 #define super IOUSBControllerV3

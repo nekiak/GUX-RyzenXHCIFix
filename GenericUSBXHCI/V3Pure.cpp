@@ -7,7 +7,7 @@
 //
 
 #include "GenericUSBXHCI.h"
-#include <IOKit/usb/IOUSBRootHubDevice.h>
+#include "IOUSBRootHubDevice.h"
 
 #define CLASS GenericUSBXHCI
 #define super IOUSBControllerV3

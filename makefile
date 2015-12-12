@@ -20,19 +20,13 @@ INSTALLDIR=Universal
 
 .PHONY: all
 all:
-	xcodebuild build $(OPTIONS) -configuration Legacy
-	xcodebuild build $(OPTIONS) -configuration Yosemite
-	xcodebuild build $(OPTIONS) -configuration Mavericks
-	xcodebuild build $(OPTIONS) -configuration Universal
-	make -f xhcdump.mak
+	xcodebuild clean $(OPTIONS) -configuration "El Capitan"
+	make -f xhcdump/xhcdump.mak
 
 .PHONY: clean
 clean:
-	xcodebuild clean $(OPTIONS) -configuration Legacy
-	xcodebuild clean $(OPTIONS) -configuration Yosemite
-	xcodebuild clean $(OPTIONS) -configuration Mavericks
-	xcodebuild clean $(OPTIONS) -configuration Universal
-	rm ./xhcdump
+	xcodebuild clean $(OPTIONS) -configuration "El Capitan"
+	rm ./xhcdump/xhcdump
 
 .PHONY: update_kernelcache
 update_kernelcache:
@@ -41,7 +35,7 @@ update_kernelcache:
 
 .PHONY: install
 install:
-	sudo cp -R ./Build/$(INSTALLDIR)/$(KEXT) /System/Library/Extensions
+	sudo cp -R ./Build/$(INSTALLDIR)/$(KEXT) /Library/Extensions
 	make update_kernelcache
 
 .PHONY: distribute
@@ -51,8 +45,9 @@ distribute:
 	#cp -R ./Build/Legacy ./Distribute
 	#cp -R ./Build/Mavericks ./Distribute
 	#cp -R ./Build/Yosemite ./Distribute
-	cp -R ./Build/Universal ./Distribute
-	cp ./xhcdump ./Distribute
+	#cp -R ./Build/Universal ./Distribute
+	#cp -R ./Build/El\ Capitan ./Distribute
+	cp ./xhcdump/xhcdump ./Distribute
 	find ./Distribute -path *.DS_Store -delete
 	find ./Distribute -path *.dSYM -exec echo rm -r {} \; >/tmp/org.voodoo.rm.dsym.sh
 	chmod +x /tmp/org.voodoo.rm.dsym.sh

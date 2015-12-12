@@ -9,7 +9,7 @@
 #include "GenericUSBXHCI.h"
 #include "XHCITypes.h"
 #include "Async.h"
-#include <IOKit/usb/IOUSBRootHubDevice.h>
+#include "IOUSBRootHubDevice.h"
 
 #define CLASS GenericUSBXHCI
 #define super IOUSBControllerV3
