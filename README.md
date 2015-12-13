@@ -1,4 +1,4 @@
-## Fork of Zenith432's GenericUSBXHCI USB 3.0 Driver by RehabMan & TheRacerMaster
+## GenericUSBXHCI Fork by RehabMan & TheRacerMaster
 
 ### How to Install:
 
@@ -27,7 +27,7 @@ http://www.insanelymac.com/forum/topic/286860-genericusbxhci-usb-30-driver-for-o
 - Might cause panics on 10.11/10.11.1; use 10.11.2+
 - xHCI controllers using this driver will not show up under System Information/USB in 10.11
 
-Support xHCI controllers that have native support (Intel 7/8/9/100 Series / Fresco Logic FL1100) will eventually be dropped from this driver.
+Support for xHCI controllers that have native support (Intel 7/8/9/100 Series / Fresco Logic FL1100) will eventually be removed from this driver.
 
 ### Change Log:
 
@@ -62,9 +62,10 @@ Support xHCI controllers that have native support (Intel 7/8/9/100 Series / Fres
 
 ### History
 
-This repository contains a modified version of Zenith432's GenericUSBXHCI USB 3.0 driver.  All credits to Zenith432 for the original code and probably further enhancements/bug fixes.
+This repository contains a modified version of Zenith432's GenericUSBXHCI USB 3.0 driver. All credits to Zenith432 for the original code and probably further enhancements/bug fixes.
 
-Original sources came from this post on Insanely Mac:
+Original sources came from this post on InsanelyMac:
+
 http://www.insanelymac.com/forum/topic/286860-genericusbxhci-usb-30-driver-for-os-x-with-source/
 
 Original repo:
