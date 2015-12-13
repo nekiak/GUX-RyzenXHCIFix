@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>net.osx86.kexts.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -24,10 +24,8 @@
 	<dict>
 		<key>GenericUSBXHCI</key>
 		<dict>
-			<key>RM,Version</key>
-			<string>${PRODUCT_NAME} ${MODULE_VERSION}</string>
-			<key>RM,Build</key>
-			<string>${CONFIGURATION}-${LOGNAME}</string>
+			<key>ASMediaEDLTAFix</key>
+			<true/>
 			<key>CFBundleIdentifier</key>
 			<string>net.osx86.kexts.${PRODUCT_NAME:rfc1034identifier}</string>
 			<key>IOClass</key>
@@ -38,16 +36,18 @@
 			<true/>
 			<key>IOPCITunnelCompatible</key>
 			<true/>
+			<key>IOProbeScore</key>
+			<integer>2000</integer>
 			<key>IOProviderClass</key>
 			<string>IOPCIDevice</string>
 			<key>IOUserClientClass</key>
 			<string>IOUSBControllerUserClient</string>
-			<key>IOProbeScore</key>
-			<integer>2000</integer>
-			<key>ASMediaEDLTAFix</key>
-			<true/>
 			<key>IntelDoze</key>
 			<false/>
+			<key>RM,Build</key>
+			<string>${CONFIGURATION}-${LOGNAME}</string>
+			<key>RM,Version</key>
+			<string>${PRODUCT_NAME} ${MODULE_VERSION}</string>
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>

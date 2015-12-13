@@ -9,7 +9,7 @@
 #ifndef GenericUSBXHCI_Isoch_h
 #define GenericUSBXHCI_Isoch_h
 
-#include "IOUSBControllerListElement.h"
+#include "../IOKit-10.9/IOUSBControllerListElement.h"
 
 #define kMaxTransfersPerFrame 8
 #define kNumTDSlots 128

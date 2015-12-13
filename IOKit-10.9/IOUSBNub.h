@@ -58,6 +58,7 @@ public:
     static void initialize();
 
 	// IOKit method
+	virtual void					joinPMtree ( IOService * driver );
 
     virtual bool					USBCompareProperty(OSDictionary   * matching, const OSSymbol     * key );
     

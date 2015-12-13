@@ -53,7 +53,6 @@ typedef enum {
 } usbCommand;
 
 #define 	kUSBCommandScratchBuffers	10
-#define 	kUSBCommandScratch64Buffers	5
 
 /*
  IOUSBCommand
@@ -99,7 +98,6 @@ protected:
 		IOUSBCommand		*_masterUSBCommand;						// points from the bufferUSBCommand back to the parent command
 		UInt32				_streamID;
 		void *				_backTrace[kUSBCommandScratchBuffers];
-        UInt64              _UIMScratch64[kUSBCommandScratch64Buffers];
     };
     ExpansionData * 		_expansionData;
     
@@ -132,7 +130,6 @@ public:
     void 					SetNoDataTimeout(UInt32 to);
     void 					SetCompletionTimeout(UInt32 to);
     void 					SetUIMScratch(UInt32 index, UInt32 value);
-    void 					SetUIMScratch64(UInt32 index, UInt64 value);
     void 					SetReqCount(IOByteCount reqCount);
     void					SetRequestMemoryDescriptor(IOMemoryDescriptor *requestMemoryDescriptor);
     void					SetBufferMemoryDescriptor(IOMemoryDescriptor *bufferMemoryDescriptor);
@@ -166,7 +163,6 @@ public:
     UInt32						GetNoDataTimeout(void);
     UInt32						GetCompletionTimeout(void);
     UInt32						GetUIMScratch(UInt32 index);
-    UInt64						GetUIMScratch64(UInt32 index);
     IOByteCount					GetReqCount(void);
     IOMemoryDescriptor *		GetRequestMemoryDescriptor(void);
     IOMemoryDescriptor *		GetBufferMemoryDescriptor(void);
@@ -178,7 +174,6 @@ public:
 	inline IODMACommand *		GetDMACommand(void)							{return _expansionData->_dmaCommand; }
 	inline UInt32				GetStreamID(void)							{return _expansionData->_streamID; }
 	inline IOUSBCommand *		GetBufferUSBCommand(void)					{return _expansionData->_bufferUSBCommand; }
-    inline IOUSBCommand *       GetMasterUSBCommand(void)                   {return _expansionData->_masterUSBCommand ? _expansionData->_masterUSBCommand : this;}
 };
 
 

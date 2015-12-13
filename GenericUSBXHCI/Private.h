@@ -822,20 +822,20 @@ protected:
     void		PMEHandler(IOInterruptEventSource * source, int count);
 };
 
-#define ON_THUNDERBOLT (CHECK_FOR_YOSEMITE ? ((Yosemite_ExpansionData*)_expansionData)->_onThunderbolt : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->_onThunderbolt)
-#define WRITE_ON_THUNDERBOLT(value) do { CHECK_FOR_YOSEMITE ? ((Yosemite_ExpansionData*)_expansionData)->_onThunderbolt = value : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->_onThunderbolt = value; } while(0)
-#define READ_V3EXPANSION(field) (CHECK_FOR_YOSEMITE ? ((Yosemite_V3ExpansionData*)_v3ExpansionData)->field : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->field)
-#define WRITE_V3EXPANSION(field,value) do { CHECK_FOR_YOSEMITE ? ((Yosemite_V3ExpansionData*)_v3ExpansionData)->field = value : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->field = value; } while(0)
+//#define ON_THUNDERBOLT (CHECK_FOR_YOSEMITE ? ((Yosemite_ExpansionData*)_expansionData)->_onThunderbolt : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->_onThunderbolt)
+//#define WRITE_ON_THUNDERBOLT(value) do { CHECK_FOR_YOSEMITE ? ((Yosemite_ExpansionData*)_expansionData)->_onThunderbolt = value : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->_onThunderbolt = value; } while(0)
+//#define READ_V3EXPANSION(field) (CHECK_FOR_YOSEMITE ? ((Yosemite_V3ExpansionData*)_v3ExpansionData)->field : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->field)
+//#define WRITE_V3EXPANSION(field,value) do { CHECK_FOR_YOSEMITE ? ((Yosemite_V3ExpansionData*)_v3ExpansionData)->field = value : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->field = value; } while(0)
 
 #else //!REHABMAN_UNIVERSAL_BUILD
 
-#if __MAC_OS_X_VERSION_MAX_ALLOWED < 101000
+//#if __MAC_OS_X_VERSION_MAX_ALLOWED < 101000
 #define ON_THUNDERBOLT _v3ExpansionData->_onThunderbolt
 #define WRITE_ON_THUNDERBOLT(value) do { _v3ExpansionData->_onThunderbolt = value; } while(0)
-#else
-#define ON_THUNDERBOLT _expansionData->_onThunderbolt
-#define WRITE_ON_THUNDERBOLT(value) do { _expansionData->_onThunderbolt = value; } while(0)
-#endif
+//#else
+//#define ON_THUNDERBOLT _expansionData->_onThunderbolt
+//#define WRITE_ON_THUNDERBOLT(value) do { _expansionData->_onThunderbolt = value; } while(0)
+//#endif
 #define READ_V3EXPANSION(field) _v3ExpansionData->field
 #define WRITE_V3EXPANSION(field,value) do { _v3ExpansionData->field = value; } while(0)
 

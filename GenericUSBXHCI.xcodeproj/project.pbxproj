@@ -23,28 +23,6 @@
 		5B26670B1C1C6A92008F5CB8 /* GenericUSBXHCIUserClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B2666CB1C1C6A92008F5CB8 /* GenericUSBXHCIUserClient.cpp */; };
 		5B26670C1C1C6A92008F5CB8 /* GenericUSBXHCIUserClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666CC1C1C6A92008F5CB8 /* GenericUSBXHCIUserClient.h */; };
 		5B26670D1C1C6A92008F5CB8 /* Interrupts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B2666CD1C1C6A92008F5CB8 /* Interrupts.cpp */; };
-		5B26670E1C1C6A92008F5CB8 /* IOUFIStorageServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666CE1C1C6A92008F5CB8 /* IOUFIStorageServices.h */; };
-		5B26670F1C1C6A92008F5CB8 /* IOUSBBus.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666CF1C1C6A92008F5CB8 /* IOUSBBus.h */; };
-		5B2667101C1C6A92008F5CB8 /* IOUSBCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666D01C1C6A92008F5CB8 /* IOUSBCommand.h */; };
-		5B2667111C1C6A92008F5CB8 /* IOUSBCompositeDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666D11C1C6A92008F5CB8 /* IOUSBCompositeDriver.h */; };
-		5B2667121C1C6A92008F5CB8 /* IOUSBController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666D21C1C6A92008F5CB8 /* IOUSBController.h */; };
-		5B2667131C1C6A92008F5CB8 /* IOUSBControllerListElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666D31C1C6A92008F5CB8 /* IOUSBControllerListElement.h */; };
-		5B2667141C1C6A92008F5CB8 /* IOUSBControllerV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666D41C1C6A92008F5CB8 /* IOUSBControllerV2.h */; };
-		5B2667151C1C6A92008F5CB8 /* IOUSBControllerV3.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666D51C1C6A92008F5CB8 /* IOUSBControllerV3.h */; };
-		5B2667161C1C6A92008F5CB8 /* IOUSBDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666D61C1C6A92008F5CB8 /* IOUSBDevice.h */; };
-		5B2667171C1C6A92008F5CB8 /* IOUSBHIDDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666D71C1C6A92008F5CB8 /* IOUSBHIDDriver.h */; };
-		5B2667181C1C6A92008F5CB8 /* IOUSBHubDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666D81C1C6A92008F5CB8 /* IOUSBHubDevice.h */; };
-		5B2667191C1C6A92008F5CB8 /* IOUSBHubPolicyMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666D91C1C6A92008F5CB8 /* IOUSBHubPolicyMaker.h */; };
-		5B26671A1C1C6A92008F5CB8 /* IOUSBInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666DA1C1C6A92008F5CB8 /* IOUSBInterface.h */; };
-		5B26671B1C1C6A92008F5CB8 /* IOUSBLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666DB1C1C6A92008F5CB8 /* IOUSBLog.h */; };
-		5B26671C1C1C6A92008F5CB8 /* IOUSBMassStorageClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666DC1C1C6A92008F5CB8 /* IOUSBMassStorageClass.h */; };
-		5B26671D1C1C6A92008F5CB8 /* IOUSBMassStorageUFISubclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666DD1C1C6A92008F5CB8 /* IOUSBMassStorageUFISubclass.h */; };
-		5B26671E1C1C6A92008F5CB8 /* IOUSBNub.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666DE1C1C6A92008F5CB8 /* IOUSBNub.h */; };
-		5B26671F1C1C6A92008F5CB8 /* IOUSBPipe.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666DF1C1C6A92008F5CB8 /* IOUSBPipe.h */; };
-		5B2667201C1C6A92008F5CB8 /* IOUSBPipeV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666E01C1C6A92008F5CB8 /* IOUSBPipeV2.h */; };
-		5B2667211C1C6A92008F5CB8 /* IOUSBRootHubDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666E11C1C6A92008F5CB8 /* IOUSBRootHubDevice.h */; };
-		5B2667221C1C6A92008F5CB8 /* IOUSBUserClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666E21C1C6A92008F5CB8 /* IOUSBUserClient.h */; };
-		5B2667231C1C6A92008F5CB8 /* IOUSBWorkLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666E31C1C6A92008F5CB8 /* IOUSBWorkLoop.h */; };
 		5B2667241C1C6A92008F5CB8 /* Isoch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B2666E41C1C6A92008F5CB8 /* Isoch.cpp */; };
 		5B2667251C1C6A92008F5CB8 /* Isoch.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666E51C1C6A92008F5CB8 /* Isoch.h */; };
 		5B2667261C1C6A92008F5CB8 /* Leaf_Methods.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B2666E61C1C6A92008F5CB8 /* Leaf_Methods.cpp */; };
@@ -56,9 +34,6 @@
 		5B26672C1C1C6A92008F5CB8 /* Streams.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B2666EC1C1C6A92008F5CB8 /* Streams.cpp */; };
 		5B26672D1C1C6A92008F5CB8 /* Transfers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B2666ED1C1C6A92008F5CB8 /* Transfers.cpp */; };
 		5B26672E1C1C6A92008F5CB8 /* UnXHCI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B2666EE1C1C6A92008F5CB8 /* UnXHCI.cpp */; };
-		5B26672F1C1C6A92008F5CB8 /* USB.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666EF1C1C6A92008F5CB8 /* USB.h */; };
-		5B2667301C1C6A92008F5CB8 /* USBHub.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666F01C1C6A92008F5CB8 /* USBHub.h */; };
-		5B2667311C1C6A92008F5CB8 /* USBSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666F11C1C6A92008F5CB8 /* USBSpec.h */; };
 		5B2667321C1C6A92008F5CB8 /* V1Overrides.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B2666F21C1C6A92008F5CB8 /* V1Overrides.cpp */; };
 		5B2667331C1C6A92008F5CB8 /* V1Pure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B2666F31C1C6A92008F5CB8 /* V1Pure.cpp */; };
 		5B2667341C1C6A92008F5CB8 /* V2Overrides.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B2666F41C1C6A92008F5CB8 /* V2Overrides.cpp */; };
@@ -68,6 +43,7 @@
 		5B26673A1C1C6A92008F5CB8 /* XHCIRegs.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666FA1C1C6A92008F5CB8 /* XHCIRegs.h */; };
 		5B26673B1C1C6A92008F5CB8 /* XHCITRB.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666FB1C1C6A92008F5CB8 /* XHCITRB.h */; };
 		5B26673C1C1C6A92008F5CB8 /* XHCITypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666FC1C1C6A92008F5CB8 /* XHCITypes.h */; };
+		5B3C26011C1CE604008F5CB8 /* IOKit-10.9 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3C26001C1CE604008F5CB8 /* IOKit-10.9 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,28 +63,6 @@
 		5B2666CB1C1C6A92008F5CB8 /* GenericUSBXHCIUserClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenericUSBXHCIUserClient.cpp; sourceTree = "<group>"; };
 		5B2666CC1C1C6A92008F5CB8 /* GenericUSBXHCIUserClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericUSBXHCIUserClient.h; sourceTree = "<group>"; };
 		5B2666CD1C1C6A92008F5CB8 /* Interrupts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Interrupts.cpp; sourceTree = "<group>"; };
-		5B2666CE1C1C6A92008F5CB8 /* IOUFIStorageServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUFIStorageServices.h; sourceTree = "<group>"; };
-		5B2666CF1C1C6A92008F5CB8 /* IOUSBBus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBBus.h; sourceTree = "<group>"; };
-		5B2666D01C1C6A92008F5CB8 /* IOUSBCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBCommand.h; sourceTree = "<group>"; };
-		5B2666D11C1C6A92008F5CB8 /* IOUSBCompositeDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBCompositeDriver.h; sourceTree = "<group>"; };
-		5B2666D21C1C6A92008F5CB8 /* IOUSBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBController.h; sourceTree = "<group>"; };
-		5B2666D31C1C6A92008F5CB8 /* IOUSBControllerListElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBControllerListElement.h; sourceTree = "<group>"; };
-		5B2666D41C1C6A92008F5CB8 /* IOUSBControllerV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBControllerV2.h; sourceTree = "<group>"; };
-		5B2666D51C1C6A92008F5CB8 /* IOUSBControllerV3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBControllerV3.h; sourceTree = "<group>"; };
-		5B2666D61C1C6A92008F5CB8 /* IOUSBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBDevice.h; sourceTree = "<group>"; };
-		5B2666D71C1C6A92008F5CB8 /* IOUSBHIDDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBHIDDriver.h; sourceTree = "<group>"; };
-		5B2666D81C1C6A92008F5CB8 /* IOUSBHubDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBHubDevice.h; sourceTree = "<group>"; };
-		5B2666D91C1C6A92008F5CB8 /* IOUSBHubPolicyMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBHubPolicyMaker.h; sourceTree = "<group>"; };
-		5B2666DA1C1C6A92008F5CB8 /* IOUSBInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBInterface.h; sourceTree = "<group>"; };
-		5B2666DB1C1C6A92008F5CB8 /* IOUSBLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBLog.h; sourceTree = "<group>"; };
-		5B2666DC1C1C6A92008F5CB8 /* IOUSBMassStorageClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBMassStorageClass.h; sourceTree = "<group>"; };
-		5B2666DD1C1C6A92008F5CB8 /* IOUSBMassStorageUFISubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBMassStorageUFISubclass.h; sourceTree = "<group>"; };
-		5B2666DE1C1C6A92008F5CB8 /* IOUSBNub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBNub.h; sourceTree = "<group>"; };
-		5B2666DF1C1C6A92008F5CB8 /* IOUSBPipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBPipe.h; sourceTree = "<group>"; };
-		5B2666E01C1C6A92008F5CB8 /* IOUSBPipeV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBPipeV2.h; sourceTree = "<group>"; };
-		5B2666E11C1C6A92008F5CB8 /* IOUSBRootHubDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBRootHubDevice.h; sourceTree = "<group>"; };
-		5B2666E21C1C6A92008F5CB8 /* IOUSBUserClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBUserClient.h; sourceTree = "<group>"; };
-		5B2666E31C1C6A92008F5CB8 /* IOUSBWorkLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBWorkLoop.h; sourceTree = "<group>"; };
 		5B2666E41C1C6A92008F5CB8 /* Isoch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Isoch.cpp; sourceTree = "<group>"; };
 		5B2666E51C1C6A92008F5CB8 /* Isoch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Isoch.h; sourceTree = "<group>"; };
 		5B2666E61C1C6A92008F5CB8 /* Leaf_Methods.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Leaf_Methods.cpp; sourceTree = "<group>"; };
@@ -120,9 +74,6 @@
 		5B2666EC1C1C6A92008F5CB8 /* Streams.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Streams.cpp; sourceTree = "<group>"; };
 		5B2666ED1C1C6A92008F5CB8 /* Transfers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transfers.cpp; sourceTree = "<group>"; };
 		5B2666EE1C1C6A92008F5CB8 /* UnXHCI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnXHCI.cpp; sourceTree = "<group>"; };
-		5B2666EF1C1C6A92008F5CB8 /* USB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USB.h; sourceTree = "<group>"; };
-		5B2666F01C1C6A92008F5CB8 /* USBHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBHub.h; sourceTree = "<group>"; };
-		5B2666F11C1C6A92008F5CB8 /* USBSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBSpec.h; sourceTree = "<group>"; };
 		5B2666F21C1C6A92008F5CB8 /* V1Overrides.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = V1Overrides.cpp; sourceTree = "<group>"; };
 		5B2666F31C1C6A92008F5CB8 /* V1Pure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = V1Pure.cpp; sourceTree = "<group>"; };
 		5B2666F41C1C6A92008F5CB8 /* V2Overrides.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = V2Overrides.cpp; sourceTree = "<group>"; };
@@ -132,6 +83,7 @@
 		5B2666FA1C1C6A92008F5CB8 /* XHCIRegs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCIRegs.h; sourceTree = "<group>"; };
 		5B2666FB1C1C6A92008F5CB8 /* XHCITRB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCITRB.h; sourceTree = "<group>"; };
 		5B2666FC1C1C6A92008F5CB8 /* XHCITypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCITypes.h; sourceTree = "<group>"; };
+		5B3C26001C1CE604008F5CB8 /* IOKit-10.9 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "IOKit-10.9"; sourceTree = "<group>"; };
 		E5D81FF2166F8ABF0075A356 /* GenericUSBXHCI.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenericUSBXHCI.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D81FF6166F8ABF0075A356 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
 		E5D81FF9166F8ABF0075A356 /* GenericUSBXHCI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenericUSBXHCI-Info.plist"; sourceTree = "<group>"; };
@@ -168,6 +120,7 @@
 		E5D81FF4166F8ABF0075A356 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B3C26001C1CE604008F5CB8 /* IOKit-10.9 */,
 				E5D81FF5166F8ABF0075A356 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -200,28 +153,6 @@
 				5B2666CB1C1C6A92008F5CB8 /* GenericUSBXHCIUserClient.cpp */,
 				5B2666CC1C1C6A92008F5CB8 /* GenericUSBXHCIUserClient.h */,
 				5B2666CD1C1C6A92008F5CB8 /* Interrupts.cpp */,
-				5B2666CE1C1C6A92008F5CB8 /* IOUFIStorageServices.h */,
-				5B2666CF1C1C6A92008F5CB8 /* IOUSBBus.h */,
-				5B2666D01C1C6A92008F5CB8 /* IOUSBCommand.h */,
-				5B2666D11C1C6A92008F5CB8 /* IOUSBCompositeDriver.h */,
-				5B2666D21C1C6A92008F5CB8 /* IOUSBController.h */,
-				5B2666D31C1C6A92008F5CB8 /* IOUSBControllerListElement.h */,
-				5B2666D41C1C6A92008F5CB8 /* IOUSBControllerV2.h */,
-				5B2666D51C1C6A92008F5CB8 /* IOUSBControllerV3.h */,
-				5B2666D61C1C6A92008F5CB8 /* IOUSBDevice.h */,
-				5B2666D71C1C6A92008F5CB8 /* IOUSBHIDDriver.h */,
-				5B2666D81C1C6A92008F5CB8 /* IOUSBHubDevice.h */,
-				5B2666D91C1C6A92008F5CB8 /* IOUSBHubPolicyMaker.h */,
-				5B2666DA1C1C6A92008F5CB8 /* IOUSBInterface.h */,
-				5B2666DB1C1C6A92008F5CB8 /* IOUSBLog.h */,
-				5B2666DC1C1C6A92008F5CB8 /* IOUSBMassStorageClass.h */,
-				5B2666DD1C1C6A92008F5CB8 /* IOUSBMassStorageUFISubclass.h */,
-				5B2666DE1C1C6A92008F5CB8 /* IOUSBNub.h */,
-				5B2666DF1C1C6A92008F5CB8 /* IOUSBPipe.h */,
-				5B2666E01C1C6A92008F5CB8 /* IOUSBPipeV2.h */,
-				5B2666E11C1C6A92008F5CB8 /* IOUSBRootHubDevice.h */,
-				5B2666E21C1C6A92008F5CB8 /* IOUSBUserClient.h */,
-				5B2666E31C1C6A92008F5CB8 /* IOUSBWorkLoop.h */,
 				5B2666E41C1C6A92008F5CB8 /* Isoch.cpp */,
 				5B2666E51C1C6A92008F5CB8 /* Isoch.h */,
 				5B2666E61C1C6A92008F5CB8 /* Leaf_Methods.cpp */,
@@ -233,9 +164,6 @@
 				5B2666EC1C1C6A92008F5CB8 /* Streams.cpp */,
 				5B2666ED1C1C6A92008F5CB8 /* Transfers.cpp */,
 				5B2666EE1C1C6A92008F5CB8 /* UnXHCI.cpp */,
-				5B2666EF1C1C6A92008F5CB8 /* USB.h */,
-				5B2666F01C1C6A92008F5CB8 /* USBHub.h */,
-				5B2666F11C1C6A92008F5CB8 /* USBSpec.h */,
 				5B2666F21C1C6A92008F5CB8 /* V1Overrides.cpp */,
 				5B2666F31C1C6A92008F5CB8 /* V1Pure.cpp */,
 				5B2666F41C1C6A92008F5CB8 /* V2Overrides.cpp */,
@@ -268,38 +196,13 @@
 			files = (
 				5B26673A1C1C6A92008F5CB8 /* XHCIRegs.h in Headers */,
 				5B2667041C1C6A92008F5CB8 /* Completer.h in Headers */,
-				5B2667301C1C6A92008F5CB8 /* USBHub.h in Headers */,
-				5B2667121C1C6A92008F5CB8 /* IOUSBController.h in Headers */,
 				5B26673C1C1C6A92008F5CB8 /* XHCITypes.h in Headers */,
 				5B2667091C1C6A92008F5CB8 /* GenericUSBXHCI.h in Headers */,
-				5B26671A1C1C6A92008F5CB8 /* IOUSBInterface.h in Headers */,
-				5B2667151C1C6A92008F5CB8 /* IOUSBControllerV3.h in Headers */,
-				5B2667111C1C6A92008F5CB8 /* IOUSBCompositeDriver.h in Headers */,
-				5B2667161C1C6A92008F5CB8 /* IOUSBDevice.h in Headers */,
 				5B2666FF1C1C6A92008F5CB8 /* Async.h in Headers */,
-				5B26671D1C1C6A92008F5CB8 /* IOUSBMassStorageUFISubclass.h in Headers */,
-				5B2667181C1C6A92008F5CB8 /* IOUSBHubDevice.h in Headers */,
-				5B26670F1C1C6A92008F5CB8 /* IOUSBBus.h in Headers */,
 				5B2667021C1C6A92008F5CB8 /* Compatibility.h in Headers */,
-				5B26671F1C1C6A92008F5CB8 /* IOUSBPipe.h in Headers */,
-				5B2667171C1C6A92008F5CB8 /* IOUSBHIDDriver.h in Headers */,
-				5B2667101C1C6A92008F5CB8 /* IOUSBCommand.h in Headers */,
-				5B26671B1C1C6A92008F5CB8 /* IOUSBLog.h in Headers */,
-				5B26671E1C1C6A92008F5CB8 /* IOUSBNub.h in Headers */,
-				5B26671C1C1C6A92008F5CB8 /* IOUSBMassStorageClass.h in Headers */,
-				5B2667191C1C6A92008F5CB8 /* IOUSBHubPolicyMaker.h in Headers */,
-				5B2667311C1C6A92008F5CB8 /* USBSpec.h in Headers */,
-				5B2667221C1C6A92008F5CB8 /* IOUSBUserClient.h in Headers */,
-				5B2667201C1C6A92008F5CB8 /* IOUSBPipeV2.h in Headers */,
 				5B26670C1C1C6A92008F5CB8 /* GenericUSBXHCIUserClient.h in Headers */,
-				5B2667211C1C6A92008F5CB8 /* IOUSBRootHubDevice.h in Headers */,
 				5B2667251C1C6A92008F5CB8 /* Isoch.h in Headers */,
-				5B26670E1C1C6A92008F5CB8 /* IOUFIStorageServices.h in Headers */,
-				5B2667231C1C6A92008F5CB8 /* IOUSBWorkLoop.h in Headers */,
 				5B26673B1C1C6A92008F5CB8 /* XHCITRB.h in Headers */,
-				5B2667131C1C6A92008F5CB8 /* IOUSBControllerListElement.h in Headers */,
-				5B26672F1C1C6A92008F5CB8 /* USB.h in Headers */,
-				5B2667141C1C6A92008F5CB8 /* IOUSBControllerV2.h in Headers */,
 				5B2667271C1C6A92008F5CB8 /* Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +235,7 @@
 		E5D81FE7166F8ABF0075A356 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0710;
 			};
 			buildConfigurationList = E5D81FEA166F8ABF0075A356 /* Build configuration list for PBXProject "GenericUSBXHCI" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -356,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3C26011C1CE604008F5CB8 /* IOKit-10.9 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +351,7 @@
 				MODULE_NAME = net.osx86.kexts.GenericUSBXHCI;
 				MODULE_START = Startup;
 				MODULE_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.osx86.kexts.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = kext;
 			};

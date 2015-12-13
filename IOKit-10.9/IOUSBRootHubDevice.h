@@ -51,11 +51,11 @@ private:
 	
     struct ExpansionData 
 	{
-		IOService *         X_IOResourcesEntry;						// deprecated
-		UInt8               _myControllerSpeed;
-		bool                _builtInController;						// Actually used to indicate whether the controller support the extra current APIs
-		bool                _hasBuiltInProperty;
-		bool				X_hasTunnelledProperty;					// deprecated
+		IOService *		X_IOResourcesEntry;						// deprecated
+		UInt8			_myControllerSpeed;
+		bool			_builtInController;						// Actually used to indicate whether the controller support the extra current APIs
+		bool			_hasBuiltInProperty;
+		bool			_hasTunnelledProperty;
 	};
     ExpansionData *_expansionData;
 

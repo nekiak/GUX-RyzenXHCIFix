@@ -20,7 +20,7 @@
 #define kMaxStreamsAllowed 256U
 #define kMaxActiveInterrupters 1
 
-#include "IOUSBControllerV3.h"
+#include "../IOKit-10.9/IOUSBControllerV3.h"
 #include "XHCIRegs.h"
 #include "Private.h"
 #include "Completer.h"

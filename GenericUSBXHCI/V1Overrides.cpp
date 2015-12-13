@@ -24,18 +24,20 @@ __attribute__((noinline))
 UInt32 CLASS::GetErrataBits(UInt16 vendorID, UInt16 deviceID, UInt16 revisionID)
 {
 	ErrataListEntry const errataList[] = {
-		{ kVendorFrescoLogic, 0x1000U, 0U, UINT16_MAX, kErrataDisableMSI },	// Fresco Logic FL1000
+		{ kVendorFrescoLogic, 0x1000U, 0U, UINT16_MAX, kErrataBrokenStreams | kErrataDisableMSI },	// Fresco Logic FL1000
 		{ kVendorFrescoLogic, 0x1100U, 0U, 15U, kErrataFL1100LowRev | kErrataParkRing },	// Fresco Logic FL1100, rev 0 - 15
 		{ kVendorFrescoLogic, 0x1100U, 16U, UINT16_MAX, kErrataParkRing }, // Fresco Logic FL1100, rev 16 and up
 		{ kVendorIntel, 0x1E31U, 0U, UINT16_MAX,
 			kErrataSWAssistedIdle |
 			kErrataParkRing | kErrataIntelPortMuxing |
-			kErrataEnableAutoCompliance | kErrataIntelPantherPoint },	// Intel Series 7/C210
-		{ kVendorIntel, 0x8C31U, 0U, UINT16_MAX, kErrataEnableAutoCompliance | kErrataParkRing | kErrataIntelLynxPoint },	// Intel Series 8/C220
-		{ kVendorIntel, 0x9C31U, 0U, UINT16_MAX, kErrataEnableAutoCompliance | kErrataParkRing | kErrataIntelLynxPoint },	// Intel Lynx Point
+			kErrataEnableAutoCompliance | kErrataIntelPantherPoint },	// Intel 7 Series/C210
+		{ kVendorIntel, 0x8C31U, 0U, UINT16_MAX, kErrataEnableAutoCompliance | kErrataParkRing | kErrataIntelLynxPoint },	// Intel 8 Series/C220
+		{ kVendorIntel, 0x9C31U, 0U, UINT16_MAX, kErrataEnableAutoCompliance | kErrataParkRing | kErrataIntelLynxPoint },	// Intel 9 Series/C220
 		{ kVendorVMware, 0x778U, 0U, UINT16_MAX, kErrataVMwarePortSwap },	// VMware Virtual xHC
-		{ kVendorEtron, 0U, 0U, UINT16_MAX, kErrataBrokenStreams },		// All Etron
-		{ kVendorASMedia, 0x1042, 0U, UINT16_MAX, kErrataBrokenStreams | kErrataAbsoluteEDTLA }	// ASMedia 1042
+		{ kVendorEtron, 0x7023U, 0U, UINT16_MAX, kErrataBrokenStreams },	// Etron EJ168
+		{ kVendorASMedia, 0x1042, 0U, UINT16_MAX, kErrataBrokenStreams | kErrataAbsoluteEDTLA },	// ASMedia ASM1042
+		{ kVendorVIATechnologies, 0x3432, 0U, UINT16_MAX, kErrataBrokenStreams }	// VIA VL800/801
+        
 	};
 	ErrataListEntry const* entryPtr;
 	uint32_t i, errata = 0U;

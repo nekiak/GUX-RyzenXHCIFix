@@ -64,7 +64,6 @@ protected:
 		UInt8						_uasUsageID;
 		UInt8						_usageType;
 		UInt8						_syncType;
-		bool						_zeroNoDataTimeout;
     };
     ExpansionData * _expansionData;
     
