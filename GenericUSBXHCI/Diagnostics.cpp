@@ -65,6 +65,8 @@ char const* stringForSpeed(uint32_t speed)
 			return "High";
 		case XDEV_SS:
 			return "Super";
+		case XDEV_SP:
+			return "Super+";
 	}
 	return "Unknown";
 }
@@ -336,6 +338,19 @@ void CLASS::PrintCapRegs(PrintSink* pSink)
 				 test_bit(v, 7),
 				 (v >> 8) & 0xFU,
 				 1U << (1 + XHCI_HCC_PSA_SZ_MAX(v)));
+    v = Read16Reg(&_pXHCICapRegisters->HCIVersion);
+	if (v > 0x100)
+	{
+		v = Read32Reg(&_pXHCICapRegisters->HCC2Params);
+		pSink->print("U3C %c, CMC %c, FSC %c, CTC %c, LEC %c, CIC %c, ITC %c\n",
+				 	test_bit(v, 0),
+				 	test_bit(v, 1),
+				 	test_bit(v, 2),
+				 	test_bit(v, 3),
+				 	test_bit(v, 4),
+				 	test_bit(v, 5),
+				 	test_bit(v, 6));
+	}
 	v = XHCI_HCC_XECP(v);
 	if (v) {
 		uint32_t volatile* q = reinterpret_cast<uint32_t volatile*>(_pXHCICapRegisters) + v;
@@ -471,7 +486,7 @@ void CLASS::PrintRuntimeRegs(PrintSink* pSink)
 					 test_bit(v, 31));
 		v = Read32Reg(&prs->PortPmsc);
 		PortNumberCanonicalToProtocol(port, &protocol);
-		if (protocol == kUSBDeviceSpeedSuper)
+		if (protocol >= kUSBDeviceSpeedSuper)
 			pSink->print("         PortPmsc U1 %u U2 %u FLA %c PortLi LEC %u\n",
 						 v & 0xFFU,
 						 (v >> 8) & 0xFFU,

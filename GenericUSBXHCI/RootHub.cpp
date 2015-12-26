@@ -245,7 +245,7 @@ IOReturn CLASS::RHResetPort(uint8_t protocol, uint16_t port)
 		if (portSC & XHCI_PS_PRC)
 			break;
 	}
-	if (XHCI_PS_SPEED_GET(portSC) == XDEV_SS)
+	if (XHCI_PS_SPEED_GET(portSC) == (XDEV_SS || XDEV_SP)
 		return kIOReturnSuccess;
 	IOSleep(500U - count * 32U);
 	companionPort = GetCompanionRootPort(protocol, port);

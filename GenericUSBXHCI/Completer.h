@@ -10,7 +10,7 @@
 #ifndef GenericUSBXHCI_Completer_h
 #define GenericUSBXHCI_Completer_h
 
-#include "../IOKit-10.9/USB.h"
+#include "../IOKit-10.10/USB.h"
 
 class GenericUSBXHCI;
 

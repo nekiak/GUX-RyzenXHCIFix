@@ -253,7 +253,7 @@ struct Mavericks_V3ExpansionData {
     bool								x_minimumIdlePowerStateValid;		// T when we have calculated the minimumIdlePowerState
     bool                                _parentDeviceON;                    // T when our parent device is in the ON power state
     //UInt32                              _thunderboltMaxBusStall;            // RMBS advertisement value when on thunderbolt
-    
+
     // Support for XHCI Thunderbolt Docks and Extra current
     //SInt32                              _tbCurrentExtra;
     //SInt32                              _tbCurrentExtraInSleep;
@@ -301,7 +301,7 @@ struct Yosemite_V3ExpansionData {
     bool								x_minimumIdlePowerStateValid;		// T when we have calculated the minimumIdlePowerState
     bool                                _parentDeviceON;                    // T when our parent device is in the ON power state
     //UInt32                              _thunderboltMaxBusStall;            // RMBS advertisement value when on thunderbolt
-    
+
     // Support for XHCI Thunderbolt Docks and Extra current
     //SInt32                              _tbCurrentExtra;
     //SInt32                              _tbCurrentExtraInSleep;
@@ -314,13 +314,13 @@ struct Yosemite_V3ExpansionData {
     //UInt32                              _tbCaptiveBitmap;
     //UInt32                              _tbExternalConnectorBitmap;
     //bool                                _tbBitmapsExist;
-    
+
     //bool                                _parentDeviceGoingToPCIPause;			// T when our parent device is going to sleep because of PCI Pause
     //bool                                _waitingForPCIPauseToFinish;            // T if we have a thread (or more) on commandSleep() waiting for the PCI Pause event to finish
     //SInt32								_pciPauseQueuedTransactionCount;		// Number of transactions/threads that have been commandSleep()'d due to the system processing a PCI Pause event
     //bool								_pciPauseTransactionToken[kMaxTransactionsDuringPCIPause];	// Token use to sleep/wake threads that come in during PCI Pause
     //bool                                _controllerWasResetOnSleep;
-    
+
 };
 
 // NOTE: This taken from _ExpansionData (IOUSBController) in 10.10 SDK
@@ -362,12 +362,12 @@ class Mavericks_IOUSBControllerV3 : public IOUSBControllerV2
     friend class IOUSBDevice;
     friend class IOUSBHubDevice;
     friend class IOUSBRootHubDevice;
-    
+
 protected:
     // static variable shared by all instances
     static uint32_t *				_gHibernateState;
-    
-    
+
+
     UInt8							_myBusState;					// kUSBBusStateReset, kUSBBusStateSuspended, kUSBBusStateRunning
     bool							_wakingFromHibernation;			// True while the Hibernation Wake thread is active going to the OFF(0) state
     bool							_needToAckPowerDown;			// True while we are changing power state due to shutdown/restart
@@ -381,7 +381,7 @@ protected:
     unsigned long					_numPowerStates;				// how many power states do I support (defaults to kUSBNumDefaultPowerStates)
     IOPMPowerState					*_myPowerStates;				// my power state array (allocated on the fly)
     IOPCIDevice						*_device;						// my PCI device
-    
+
     // root hub support
     IOTimerEventSource					*_rootHubTimer;				// timer which fires at the rate of the root hub interrupt endpoint
     UInt8								_rootHubPollingRate;		// Obsolete -- we need to have it be a uint32_t
@@ -421,7 +421,7 @@ protected:
         bool								_minimumIdlePowerStateValid;		// T when we have calculated the minimumIdlePowerState
         bool                                _parentDeviceON;                    // T when our parent device is in the ON power state
         UInt32                              _thunderboltMaxBusStall;            // RMBS advertisement value when on thunderbolt
-        
+
         // Support for XHCI Thunderbolt Docks and Extra current
         SInt32                              _tbCurrentExtra;
         SInt32                              _tbCurrentExtraInSleep;
@@ -451,9 +451,9 @@ protected:
 #define _TB_CAPTIVEBITMAP                       _v3ExpansionData->_tbCaptiveBitmap
 #define _TB_EXTERNALCONNECTORBITMAP             _v3ExpansionData->_tbExternalConnectorBitmap
 #define _TB_BITMAPS_EXIST                       _v3ExpansionData->_tbBitmapsExist
-    
+
 #endif//0
-    
+
     // IOKit methods
     virtual bool					init( OSDictionary *  propTable );
     virtual bool					start( IOService *  provider );
@@ -467,9 +467,9 @@ protected:
     virtual void					systemWillShutdown( IOOptionBits specifier );
     virtual bool					willTerminate(IOService * provider, IOOptionBits options);
     virtual bool					didTerminate( IOService * provider, IOOptionBits options, bool * defer );
-    
+
     virtual void					free(void);
-    
+
     // IOUSBController methods
     // we override these to deal with methods attempting to go through the workloop while we are in sleep
     virtual IOReturn 		AcquireDeviceZero( void );
@@ -484,7 +484,7 @@ protected:
     virtual IOReturn 		Write(IOMemoryDescriptor *buffer, USBDeviceAddress address, Endpoint *endpoint, IOUSBCompletion *completion, UInt32 noDataTimeout, UInt32 completionTimeout, IOByteCount reqCount);
     virtual IOReturn		IsocIO(IOMemoryDescriptor *buffer, UInt64 frameStart, UInt32 numFrames, IOUSBIsocFrame *frameList, USBDeviceAddress address, Endpoint *endpoint, IOUSBIsocCompletion *completion );
     virtual IOReturn		IsocIO(IOMemoryDescriptor *buffer, UInt64 frameStart, UInt32 numFrames, IOUSBLowLatencyIsocFrame *frameList, USBDeviceAddress address, Endpoint *endpoint, IOUSBLowLatencyIsocCompletion *completion, UInt32 updateFrequency );
-    
+
     // IOUSBControllerV2 methods
     // we override these to deal with methods attempting to go through the workloop while we are in sleep
     virtual IOReturn 		OpenPipe(USBDeviceAddress address, UInt8 speed, Endpoint *endpoint);
@@ -492,9 +492,9 @@ protected:
     virtual IOReturn		RemoveHSHub(USBDeviceAddress highSpeedHub);
     virtual IOReturn		SetTestMode(UInt32 mode, UInt32 port);
     virtual IOReturn		ReadV2(IOMemoryDescriptor *buffer, USBDeviceAddress	address, Endpoint *endpoint, IOUSBCompletionWithTimeStamp *completion, UInt32 noDataTimeout, UInt32	completionTimeout, IOByteCount reqCount);
-    
+
     // IOUSBControllerV3 methods
-    
+
     // these are called through the workloop
     static IOReturn					DoEnableAddressEndpoints(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3);
     static IOReturn					DoEnableAllEndpoints(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3);
@@ -502,10 +502,10 @@ protected:
     static IOReturn					ChangeExternalDeviceCount(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3);
     static IOReturn					DoGetActualDeviceAddress(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3);
     static IOReturn					DoCreateStreams(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3 );
-    
+
     // also on the workloop
     static void						RootHubTimerFired(OSObject *owner, IOTimerEventSource *sender);
-    
+
     // Copied from IOUSBController DoAbortEP
     static IOReturn 		DoAbortStream(
                                           OSObject *	owner,
@@ -513,7 +513,7 @@ protected:
                                           void *	arg1,
                                           void *	arg2,
                                           void *	arg3 );
-    
+
     // subclassable methods
     virtual IOReturn				CheckForEHCIController(IOService *provider);
     virtual	IOReturn				AllocatePowerStateArray(void);
@@ -527,14 +527,14 @@ protected:
     virtual IOReturn				RootHubAbortInterruptRead(void);
     virtual IOReturn				RootHubStartTimer(UInt8 pollingRate);			// Obsolete see RootHubStartTimer32
     virtual IOReturn				RootHubStopTimer(void);
-    
+
     // these methods have a default implementation using some of the virtual methods below
     virtual	void					ControllerOff(void);
     virtual	void					ControllerRestart(void);
     virtual	void					ControllerSleep(void);
     virtual	void					ControllerDoze(void);
     virtual	void					ControllerOn(void);
-    
+
     // these methods are pure virtual, and need to be implemented in the subclass driver
     virtual	IOReturn				ResetControllerState(void) = 0;
     virtual IOReturn				RestartControllerFromReset(void) = 0;
@@ -545,24 +545,24 @@ protected:
     virtual IOReturn				UIMEnableAddressEndpoints(USBDeviceAddress address, bool enable) = 0;
     virtual IOReturn				UIMEnableAllEndpoints(bool enable) = 0;
     virtual IOReturn				EnableInterruptsFromController(bool enable) = 0;
-    
+
 public:
-    
+
     // public methods
     virtual IOReturn				EnableAddressEndpoints(USBDeviceAddress address, bool enable);
     virtual bool					IsControllerAvailable(void);
     virtual IOReturn				HandlePowerChange(unsigned long powerStateOrdinal);
     virtual	UInt32					AllocateExtraRootHubPortPower(UInt32 extraPowerRequested);		// DEPRECATED
     virtual	void					ReturnExtraRootHubPortPower(UInt32 extraPowerReturned);			// DEPRECATED
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  0);
     virtual IOReturn				RootHubStartTimer32(uint32_t pollingRate);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  1);
     virtual IOReturn				CheckPMAssertions(IOUSBDevice *forDevice, bool deviceBeingAdded);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  2);
-    
+
     /*!
      @function GetRootHubBOSDescriptor
      @abstract UIM function, retrun the BOS descriptor of the simulated root hub device
@@ -570,7 +570,7 @@ public:
      @param  desc   Descriptor structure to return data in
      */
     virtual IOReturn 		GetRootHubBOSDescriptor( OSData *desc );
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  3);
     /*!
      @function GetRootHubDescriptor
@@ -579,7 +579,7 @@ public:
      @param  desc   Descriptor structure to return data in
      */
     virtual IOReturn 		GetRootHub3Descriptor( IOUSB3HubDescriptor *desc );
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  4);
     /*!
      @function UIMDeviceToBeReset
@@ -588,7 +588,7 @@ public:
      @result Return kIOReturnSuccess if pipes have been deleted and need to be setup again.
      */
     virtual IOReturn        UIMDeviceToBeReset(short functionAddress);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  5);
     /*!
      @function Read
@@ -610,7 +610,7 @@ public:
                           UInt32							noDataTimeout,
                           UInt32							completionTimeout,
                           IOByteCount						reqCount );
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  6);
     /*!
      @function Write
@@ -632,11 +632,11 @@ public:
                                   UInt32			noDataTimeout,
                                   UInt32			completionTimeout,
                                   IOByteCount		reqCount );
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  7);
     virtual IOReturn 		AbortPipe(UInt32 streamID, USBDeviceAddress address, Endpoint *endpoint);
-    
-    
+
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  8);
     /*!
      @function UIMAbortEndpoint
@@ -650,10 +650,10 @@ public:
                                            short		functionNumber,
                                            short		endpointNumber,
                                            short		direction);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  9);
     virtual IOReturn 		OpenPipe(USBDeviceAddress address, UInt8 speed, Endpoint *endpoint, UInt32 maxStreams, UInt32 maxBurstAndMult);
-    
+
     /*!
      @function UIMMaxSupportedStream
      @abstract UIM function  Returns how many streams per endpoint are supported by the USB controller.  This call does not go through the workloop gate.
@@ -661,11 +661,11 @@ public:
      */
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  10);
     virtual UInt32			UIMMaxSupportedStream(void);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  11);
-    
+
     virtual USBDeviceAddress UIMGetActualDeviceAddress(USBDeviceAddress current);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  12);
     /*!
      @function UIMCreateBulkSSEndpoint
@@ -687,7 +687,7 @@ public:
                                                     UInt16		maxPacketSize,
                                                     UInt32      maxStream,
                                                     UInt32      maxBurst);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  13);
     /*!
      @function UIMCreateSSInterruptEndpoint
@@ -696,7 +696,7 @@ public:
      @param functionNumber  USB device ID of device
      @param endpointNumber  endpoint address of the endpoint in the device
      @param direction       Direction of data flow. kUSBIn or kUSBOut
-     @param speed           speed of the device kUSBDeviceSpeedFull, kUSBDeviceSpeedHigh, kUSBDeviceSpeedSuper
+     @param speed           speed of the device kUSBDeviceSpeedFull, kUSBDeviceSpeedHigh, kUSBDeviceSpeedSuper or kUSBDeviceSpeedSuperPlus
      @param maxPacketSize   maximum packet size of this endpoint
      @param pollingRate
      @param maxBurst		number of extra packets in a burst transfer
@@ -709,7 +709,7 @@ public:
                                                          UInt16		maxPacketSize,
                                                          short		pollingRate,
                                                          UInt32     maxBurst);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  14);
     /*!
      @function UIMCreateSSIsochEndpoint
@@ -729,7 +729,7 @@ public:
                                                      UInt8				direction,
                                                      UInt8				interval,
                                                      UInt32             maxBurstAndMult);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  15);
     /*!
      @function UIMCreateStreams
@@ -744,14 +744,14 @@ public:
                                       UInt8				endpointNumber,
                                       UInt8				direction,
                                       UInt32            maxStream);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  16);
-    
+
     virtual IOReturn		 	GetActualDeviceAddress(USBDeviceAddress currentAddress, USBDeviceAddress *newAddress);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  17);
     virtual	IOReturn			CreateStreams(UInt8 functionNumber, UInt8 endpointNumber, UInt8 direction,  UInt32 maxStream);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  18);
     /*!
      @function GetRootHubPortErrorCount
@@ -760,7 +760,7 @@ public:
      @param	 count	Pointer to a UInt16 to store the actual link error count
      */
     virtual IOReturn 		GetRootHubPortErrorCount( UInt16 port, UInt16 * count );
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  19);
     /* !
      @function GetBandwidthAvailableForDevice
@@ -769,7 +769,7 @@ public:
      @param pBandwidthAvailable Pointer to the holder for the bandwidth
      */
     virtual IOReturn        GetBandwidthAvailableForDevice(IOUSBDevice *forDevice, UInt32 *pBandwidthAvailable);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  20);
     /* !
      @function GetMinimumIdlePowerState
@@ -778,7 +778,7 @@ public:
      @result returns the calculated minimum idle power state
      */
     virtual UInt32        GetMinimumIdlePowerState(void);
-    
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  21);
     /* !
      @function GetErrata64Bits
@@ -786,8 +786,8 @@ public:
      @result returs a bit field with the errata that apply to the given vendor/device/revision of a USB controller
      */
     virtual UInt64			GetErrata64Bits(UInt16 vendorID, UInt16 deviceID, UInt16 revisionID );
-    
-    
+
+
     OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  22);
     /* !
      @function DoNotPowerOffPortsOnStop
@@ -795,7 +795,7 @@ public:
      @result returs true if the ports should NOT be powered off on shutdown
      */
     virtual bool			DoNotPowerOffPortsOnStop(void);
-    
+
     OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  23);
     OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  24);
     OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  25);
@@ -803,7 +803,7 @@ public:
     OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  27);
     OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  28);
     OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  29);
-    
+
 #ifndef __OPEN_SOURCE__
 public:
     // Non-virtual public methods which are out of the open source
@@ -812,9 +812,9 @@ public:
     bool                            CanControllerMuxOverToEHCI( IORegistryEntry * provider, UInt32 locationID );
     void                            UpdateThunderboltExtraCurrentiVars();
 #endif
-    
+
 protected:
-    
+
     void		FixupNECControllerConfigRegisters(void);
     IOReturn	RHQueueTransaction(IOMemoryDescriptor *buf, UInt32 bufLen, IOUSBCompletion completion, IOUSBRootHubInterruptTransactionPtr outstandingRHXaction);
     void		RHCompleteTransaction(IOUSBRootHubInterruptTransactionPtr outstandingRHTransPtr, UInt16	rhStatusChangedBitmap, UInt16 numPorts, bool cancelTimer);
@@ -822,20 +822,20 @@ protected:
     void		PMEHandler(IOInterruptEventSource * source, int count);
 };
 
-//#define ON_THUNDERBOLT (CHECK_FOR_YOSEMITE ? ((Yosemite_ExpansionData*)_expansionData)->_onThunderbolt : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->_onThunderbolt)
-//#define WRITE_ON_THUNDERBOLT(value) do { CHECK_FOR_YOSEMITE ? ((Yosemite_ExpansionData*)_expansionData)->_onThunderbolt = value : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->_onThunderbolt = value; } while(0)
-//#define READ_V3EXPANSION(field) (CHECK_FOR_YOSEMITE ? ((Yosemite_V3ExpansionData*)_v3ExpansionData)->field : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->field)
-//#define WRITE_V3EXPANSION(field,value) do { CHECK_FOR_YOSEMITE ? ((Yosemite_V3ExpansionData*)_v3ExpansionData)->field = value : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->field = value; } while(0)
+#define ON_THUNDERBOLT (CHECK_FOR_YOSEMITE ? ((Yosemite_ExpansionData*)_expansionData)->_onThunderbolt : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->_onThunderbolt)
+#define WRITE_ON_THUNDERBOLT(value) do { CHECK_FOR_YOSEMITE ? ((Yosemite_ExpansionData*)_expansionData)->_onThunderbolt = value : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->_onThunderbolt = value; } while(0)
+#define READ_V3EXPANSION(field) (CHECK_FOR_YOSEMITE ? ((Yosemite_V3ExpansionData*)_v3ExpansionData)->field : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->field)
+#define WRITE_V3EXPANSION(field,value) do { CHECK_FOR_YOSEMITE ? ((Yosemite_V3ExpansionData*)_v3ExpansionData)->field = value : ((Mavericks_V3ExpansionData*)_v3ExpansionData)->field = value; } while(0)
 
 #else //!REHABMAN_UNIVERSAL_BUILD
 
-//#if __MAC_OS_X_VERSION_MAX_ALLOWED < 101000
+#if __MAC_OS_X_VERSION_MAX_ALLOWED < 101000
 #define ON_THUNDERBOLT _v3ExpansionData->_onThunderbolt
 #define WRITE_ON_THUNDERBOLT(value) do { _v3ExpansionData->_onThunderbolt = value; } while(0)
-//#else
-//#define ON_THUNDERBOLT _expansionData->_onThunderbolt
-//#define WRITE_ON_THUNDERBOLT(value) do { _expansionData->_onThunderbolt = value; } while(0)
-//#endif
+#else
+#define ON_THUNDERBOLT _expansionData->_onThunderbolt
+#define WRITE_ON_THUNDERBOLT(value) do { _expansionData->_onThunderbolt = value; } while(0)
+#endif
 #define READ_V3EXPANSION(field) _v3ExpansionData->field
 #define WRITE_V3EXPANSION(field,value) do { _v3ExpansionData->field = value; } while(0)
 

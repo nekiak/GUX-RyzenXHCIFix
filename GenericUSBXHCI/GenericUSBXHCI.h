@@ -20,7 +20,7 @@
 #define kMaxStreamsAllowed 256U
 #define kMaxActiveInterrupters 1
 
-#include "../IOKit-10.9/IOUSBControllerV3.h"
+#include "../IOKit-10.10/IOUSBControllerV3.h"
 #include "XHCIRegs.h"
 #include "Private.h"
 #include "Completer.h"
@@ -436,6 +436,7 @@ public:
 	/*
 	 * Virtual from IOService
 	 */
+	IOService* probe(IOService* provider, SInt32* score);
 	bool willTerminate(IOService* provider, IOOptionBits options);
 	bool terminate(IOOptionBits options);
 	IOReturn message(UInt32 type, IOService* provider, void* argument);

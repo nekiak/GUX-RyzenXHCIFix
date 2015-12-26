@@ -43,7 +43,7 @@
 		5B26673A1C1C6A92008F5CB8 /* XHCIRegs.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666FA1C1C6A92008F5CB8 /* XHCIRegs.h */; };
 		5B26673B1C1C6A92008F5CB8 /* XHCITRB.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666FB1C1C6A92008F5CB8 /* XHCITRB.h */; };
 		5B26673C1C1C6A92008F5CB8 /* XHCITypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2666FC1C1C6A92008F5CB8 /* XHCITypes.h */; };
-		5B3C26011C1CE604008F5CB8 /* IOKit-10.9 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3C26001C1CE604008F5CB8 /* IOKit-10.9 */; };
+		5BB7DA651C2EF917008F5CB8 /* IOKit-10.10 in Resources */ = {isa = PBXBuildFile; fileRef = 5BB7DA641C2EF917008F5CB8 /* IOKit-10.10 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +65,7 @@
 		5B2666CD1C1C6A92008F5CB8 /* Interrupts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Interrupts.cpp; sourceTree = "<group>"; };
 		5B2666E41C1C6A92008F5CB8 /* Isoch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Isoch.cpp; sourceTree = "<group>"; };
 		5B2666E51C1C6A92008F5CB8 /* Isoch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Isoch.h; sourceTree = "<group>"; };
-		5B2666E61C1C6A92008F5CB8 /* Leaf_Methods.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Leaf_Methods.cpp; sourceTree = "<group>"; };
+		5B2666E61C1C6A92008F5CB8 /* Leaf_Methods.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Leaf_Methods.cpp; sourceTree = "<group>"; usesTabs = 1; };
 		5B2666E71C1C6A92008F5CB8 /* Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Private.h; sourceTree = "<group>"; };
 		5B2666E81C1C6A92008F5CB8 /* PwrMgmt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PwrMgmt.cpp; sourceTree = "<group>"; };
 		5B2666E91C1C6A92008F5CB8 /* Rings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rings.cpp; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		5B2666FA1C1C6A92008F5CB8 /* XHCIRegs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCIRegs.h; sourceTree = "<group>"; };
 		5B2666FB1C1C6A92008F5CB8 /* XHCITRB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCITRB.h; sourceTree = "<group>"; };
 		5B2666FC1C1C6A92008F5CB8 /* XHCITypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCITypes.h; sourceTree = "<group>"; };
-		5B3C26001C1CE604008F5CB8 /* IOKit-10.9 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "IOKit-10.9"; sourceTree = "<group>"; };
+		5BB7DA641C2EF917008F5CB8 /* IOKit-10.10 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "IOKit-10.10"; sourceTree = "<group>"; };
 		E5D81FF2166F8ABF0075A356 /* GenericUSBXHCI.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenericUSBXHCI.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D81FF6166F8ABF0075A356 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
 		E5D81FF9166F8ABF0075A356 /* GenericUSBXHCI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenericUSBXHCI-Info.plist"; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		E5D81FF4166F8ABF0075A356 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5B3C26001C1CE604008F5CB8 /* IOKit-10.9 */,
+				5BB7DA641C2EF917008F5CB8 /* IOKit-10.10 */,
 				E5D81FF5166F8ABF0075A356 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -259,7 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3C26011C1CE604008F5CB8 /* IOKit-10.9 in Resources */,
+				5BB7DA651C2EF917008F5CB8 /* IOKit-10.10 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

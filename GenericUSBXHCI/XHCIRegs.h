@@ -20,7 +20,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-	
+
 struct XHCICapRegisters
 {
 	uint8_t  CapLength;
@@ -28,6 +28,7 @@ struct XHCICapRegisters
 	uint16_t HCIVersion;
 	uint32_t HCSParams[3];
 	uint32_t HCCParams;
+	uint32_t HCC2Params;
 	uint32_t DBOff;
 	uint32_t RTSOff;
 };
@@ -49,6 +50,15 @@ struct XHCICapRegisters
 #define	XHCI_HCC_NSS(x)	(((x) >> 7) & 0x1U)	/* no secondary sid */
 #define	XHCI_HCC_PSA_SZ_MAX(x)	(((x) >> 12) & 0xFU)	/* max pri. stream array size */
 #define	XHCI_HCC_XECP(x)	(((x) >> 16) & 0xFFFFU)	/* extended capabilities pointer */
+
+/* xHCI 1.1 HCC2 bits */
+#define XHCI_HCC2_U3C(x)	((x) & (1 << 0)) /* U3 entry capable */
+#define XHCI_HCC2_CMC(x)	((x) & (1 << 1)) /* max exit latency too large */
+#define XHCI_HCC2_FSC(x)	((x) & (1 << 2)) /* force save context capable */
+#define XHCI_HCC2_CTC(x)	((x) & (1 << 3)) /* compliance transition capable */
+#define XHCI_HCC2_LEC(x)	((x) & (1 << 4)) /* large ESIT payload capable */
+#define XHCI_HCC2_CIC(x)	((x) & (1 << 5)) /* config information capable */
+#define XHCI_HCC2_ETC(x)	((x) & (1 << 6)) /* extended TBC capable */
 
 struct XHCIPortRegisterSet
 {
@@ -111,6 +121,7 @@ struct XHCIOpRegistersUnpadded
 #define	XHCI_CRCR_LO_CRR	0x00000008ULL	/* RO - Command Ring Running */
 #define	XHCI_CRCR_LO_MASK	0x0000003FULL
 #define	XHCI_CONFIG_SLOTS_MASK	0x000000FFU	/* RW - number of device slots enabled */
+//#define XHCI_CONFIG_U3E
 
 /* XHCI port status bits (sticky) */
 #define	XHCI_PS_CCS		0x00000001U	/* RO - current connect status */
@@ -156,6 +167,7 @@ struct XHCIOpRegistersUnpadded
 #define	XDEV_LS			2U
 #define	XDEV_HS			3U
 #define	XDEV_SS			4U
+#define XDEV_SP			5U
 
 struct XHCIInterruptRegisterSet
 {

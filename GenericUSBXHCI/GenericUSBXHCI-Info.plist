@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>net.osx86.kexts.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -24,30 +24,44 @@
 	<dict>
 		<key>GenericUSBXHCI</key>
 		<dict>
-			<key>ASMediaEDLTAFix</key>
-			<true/>
+			<key>RM,Version</key>
+			<string>${PRODUCT_NAME} ${MODULE_VERSION}</string>
+			<key>RM,Build</key>
+			<string>${CONFIGURATION}-${LOGNAME}</string>
 			<key>CFBundleIdentifier</key>
 			<string>net.osx86.kexts.${PRODUCT_NAME:rfc1034identifier}</string>
 			<key>IOClass</key>
 			<string>GenericUSBXHCI</string>
+			<key>#IOPCIPrimaryMatch</key>
+			<string>0x01941033</string>
 			<key>IOPCIClassMatch</key>
 			<string>0x0c033000</string>
 			<key>IOPCIPauseCompatible</key>
 			<true/>
 			<key>IOPCITunnelCompatible</key>
 			<true/>
-			<key>IOProbeScore</key>
-			<integer>2000</integer>
 			<key>IOProviderClass</key>
 			<string>IOPCIDevice</string>
 			<key>IOUserClientClass</key>
 			<string>IOUSBControllerUserClient</string>
+			<key>IOProbeScore</key>
+			<integer>1</integer>
+			<key>ASMediaEDLTAFix</key>
+			<true/>
 			<key>IntelDoze</key>
 			<false/>
-			<key>RM,Build</key>
-			<string>${CONFIGURATION}-${LOGNAME}</string>
-			<key>RM,Version</key>
-			<string>${PRODUCT_NAME} ${MODULE_VERSION}</string>
+			<key>DeviceWhitelist</key>
+			<dict>
+				<key>1b73_1000</key>
+				<integer>0</integer>
+			</dict>
+			<key>DeviceBlacklist</key>
+			<dict>
+				<key>8086</key>
+				<integer>0</integer>
+				<key>1b73</key>
+				<integer>0</integer>
+			</dict>
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>

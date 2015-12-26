@@ -100,6 +100,9 @@ IOReturn CLASS::AddressDevice(uint32_t deviceSlot, uint16_t maxPacketSize, bool 
 		case kUSBDeviceSpeedSuper:
 			SetSlCtxSpeed(pContext, XDEV_SS);
 			goto skip_low_full;
+		case kUSBDeviceSpeedSuperPlus:
+			SetSlCtxSpeed(pContext, XDEV_SP);
+			goto skip_low_full;
 	}
 	/*
 	 * Note: Only for Low or Full Speed devices

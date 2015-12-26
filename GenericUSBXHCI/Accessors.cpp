@@ -152,8 +152,10 @@ uint8_t CLASS::GetSlCtxSpeed(ContextStruct const* pContext)
 			return kUSBDeviceSpeedLow;
 		case XDEV_HS:
 			return kUSBDeviceSpeedHigh;
-		default: // (XDEV_SS)
+		case XDEV_SS:
 			return kUSBDeviceSpeedSuper;
+		default: // (XDEV_SP)
+			return kUSBDeviceSpeedSuperPlus;
 	}
 }
 

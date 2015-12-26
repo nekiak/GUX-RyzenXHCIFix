@@ -9,7 +9,7 @@
 #include "GenericUSBXHCI.h"
 #include "XHCITypes.h"
 #include "Async.h"
-#include "../IOKit-10.9/IOUSBRootHubDevice.h"
+#include "../IOKit-10.10/IOUSBRootHubDevice.h"
 
 #define CLASS GenericUSBXHCI
 #define super IOUSBControllerV3
@@ -41,7 +41,7 @@ IOUSBHubPolicyMaker* CLASS::GetHubForProtocol(uint8_t protocol)
 {
 	if (protocol == kUSBDeviceSpeedHigh && _rootHubDevice)
 		return _rootHubDevice->GetPolicyMaker();
-	if (protocol == kUSBDeviceSpeedSuper && _expansionData && _rootHubDeviceSS)
+	if (protocol >= kUSBDeviceSpeedSuper && _expansionData && _rootHubDeviceSS)
 		return _rootHubDeviceSS->GetPolicyMaker();
 	return 0;
 }
@@ -357,6 +357,9 @@ IOReturn CLASS::GetPortBandwidth(uint8_t HubSlot, uint8_t speed, uint8_t* pBuffe
 			break;
 		case kUSBDeviceSpeedSuper:
 			xspeed = XDEV_SS;
+			break;
+		case kUSBDeviceSpeedSuperPlus:
+			xspeed = XDEV_SP;
 			break;
 		default:
 			return kIOReturnBadArgument;
