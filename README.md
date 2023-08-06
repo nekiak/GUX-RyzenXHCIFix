@@ -1,7 +1,7 @@
 ## GUX-RyzenXHCIFix
 
 This is a fork of GenericUSBXHCI aimed at analyzing and fixing the USB3 issue found on some Ryzen APU-based hackintoshes running macOS 11.0+
-An experimental kext which fixed the issue on my own laptop (Picasso APU) can be downloaded on the releases tab, *but you should **really** read through this document before using it (especially "the warning").*
+An experimental kext which fixed the issue on my own laptop (Picasso APU) can be downloaded on the releases tab, *but you should **really** read through this document before using it (especially "the warning" paragraph).*
 
 ### The USB issue
 
