@@ -11,8 +11,6 @@
 #ifndef GenericUSBXHCI_Private_h
 #define GenericUSBXHCI_Private_h
 
-#define IOSync __builtin_ia32_mfence
-
 #pragma mark -
 #pragma mark From IOUSBFamily
 #pragma mark -

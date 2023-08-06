@@ -46,7 +46,7 @@ IOService* CLASS::probe(IOService* provider, SInt32* score)
     uint32_t v;
 #if 0
     uint32_t thisKernelVersion = MakeKernelVersion(version_major, version_minor, version_revision);
-    bool force11 = false;
+    bool force11 = true;
     if (PE_parse_boot_argn("-gux_force11", &v, sizeof v))
         force11 = true;
     if (!force11 && thisKernelVersion >= MakeKernelVersion(15, 0, 0)) {

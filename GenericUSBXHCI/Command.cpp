@@ -166,9 +166,9 @@ IOReturn CLASS::EnqueCMD(TRBStruct* trb, int32_t trbType, TRBCallback callback, 
 	fourth |= XHCI_TRB_3_TYPE_SET(trbType);
 	if (_commandRing.cycleState)
 		fourth |= XHCI_TRB_3_CYCLE_BIT;
-	IOSync();
+    __atomic_thread_fence(__ATOMIC_SEQ_CST);
 	target->d = fourth;
-	IOSync();
+    __atomic_thread_fence(__ATOMIC_SEQ_CST);
 	if (!next) {
 		if (_commandRing.cycleState)
 			_commandRing.ptr[_commandRing.numTRBs - 1U].d |= XHCI_TRB_3_CYCLE_BIT;

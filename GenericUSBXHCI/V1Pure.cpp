@@ -101,11 +101,11 @@ IOReturn CLASS::UIMInitialize(IOService* provider)
 																					  _device,
 																					  findInterruptIndex(_device,
 																										 !(_errataBits & kErrataDisableMSI)));
-	if (!_filterInterruptSource) {
+	//if (!_filterInterruptSource) {
 		IOLog("%s: Unable to create filterInterruptEventSource\n", __FUNCTION__);
 		UIMFinalize();
 		return kIOReturnNoResources;
-	}
+	//}
 	_baseInterruptIndex = _filterInterruptSource->getIntIndex();
 	rc = _workLoop->addEventSource(_filterInterruptSource);
 	if (rc != kIOReturnSuccess) {

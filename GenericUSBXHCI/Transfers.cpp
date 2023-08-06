@@ -575,9 +575,9 @@ TRBStruct* CLASS::GetNextTRB(ringStruct* pRing, void* isLastTrbInTransaction, TR
 			/*
 			 * Note: This could lead xHC to immediately parse link TRB
 			 */
-			IOSync();
+			__atomic_thread_fence(__ATOMIC_SEQ_CST);
 			pTrb2->d = fourth;
-			IOSync();
+			__atomic_thread_fence(__ATOMIC_SEQ_CST);
 			newEnqueueIndex = reposition + 1U;
 			*ppFirstTrbInFragment = pRing->ptr;
 			pRing->enqueueIndex = reposition;
@@ -605,9 +605,9 @@ void CLASS::CloseFragment(ringStruct* pRing, TRBStruct* pFirstTrbInFragment, uin
 	fourth &= XHCI_TRB_3_CYCLE_BIT;
 	fourth |= newFourth;
 	fourth ^= XHCI_TRB_3_CYCLE_BIT;
-	IOSync();
+	__atomic_thread_fence(__ATOMIC_SEQ_CST);
 	pFirstTrbInFragment->d = fourth;
-	IOSync();
+	__atomic_thread_fence(__ATOMIC_SEQ_CST);
 }
 
 __attribute__((visibility("hidden")))
