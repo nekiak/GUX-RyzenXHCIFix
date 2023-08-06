@@ -1,64 +1,26 @@
-## GenericUSBXHCI Fork by RehabMan & TheRacerMaster
+## GUX-RyzenXHCIFix
 
-### How to Install:
+This is a fork of GenericUSBXHCI aimed at analyzing and fixing the USB3 issue found on some Ryzen APU-based hackintoshes running macOS 11.0+
+An experimental kext which fixed the issue on my own laptop (Picasso APU) can be downloaded on the releases tab, *but you should **really** read through this document before using it (especially "the warning").*
 
-Install GenericUSBXHCI.kext using Kext Wizard or your favorite kext installer.
+### The USB issue
 
-If you were previously using PXHCD.kext or a similar kext, you should probably remove it.
-```
-rm -rf /Library/Extensions/PXHCD.kext
-```
+A number of Ryzen APU-based hackintoshes hang on boot while initializing their XHCI controllers due to a conflict caused by a still not entirely understood issue. While it is possible to use GenericUSBXHCI (GUX) as a workaround on Catalina and gain back full USB functionality, Apple has made significant changes to the way macOS handles USB starting from Big Sur, which in turn ended up breaking several of GUX's functions (it would still allow you to boot, but USB mass storage and many other composite devices such as webcams do not work). An alternative work-around to using GUX on 11.0+ was to use [Smokeless UMAF](https://github.com/DavidS95/Smokeless_UMAF) to disable one of the XHCI controllers, however, not all devices have said option avaliable on UMAF, and even if it is available, it would mean disabling either the device's external USB ports or internal USB devices (webcam/bluetooth/etc).
 
-### Downloads:
+### The "fix"
 
-Downloads are available under GitHub Releases.
+While looking for a fix, I've noticed booting with GUX installed and using the -gux_nomsi boot-arg would make USB work flawlessly on my system. I've then shared my findings with [Noot Inc.](https://nootinc.github.io/) and, while analyzing what happened with [Visual Ehrmanntraut](https://github.com/ChefKissInc) and Yan Schafer, we noticed this was because GUX would get loaded and perform some of its USB init functions, then, because my laptop had no way of using USB without MSI, it would error out and quit during early boot, AppleUSBXHCIPCI to attach to XHC0 and XHC1 instead. With this info in mind, I've then forked GUX, made some small changes allowing it to compile under Xcode 14.3.1 (target Ventura 13.5) and forced it to always exit where it would normally error out with -gux_nomsi, so not only no boot-args are needed, but it should potentially make the kext work on systems where the issue is present but USB without MSI is supported properly.
 
-### Build Environment
+### The warning
 
-This project requires Xcode 7 using the OS X 10.11 SDK, targeting OS X 10.11.
+We are not fully sure what exactly in GUX's early init code solves the XHCI conflict yet, all we know is *something* there fixed it on this device. As such, this kext should **not** be considered a proper, definitive solution, and the issue should be looked into more thorougly. Given the underlying complexity causing this issue, there's also no guarantee this modded kext will solve the XHCI conflict on your system as well. I'm only providing the compiled kext as a temporary workaround.
 
-### Feedback:
+The goal of this project is to hopefully identify and isolate what makes XHCI work properly on 11.0+ Ryzen APU hackintoshes and make a separate kext out of it ~~if i have enough free time.~~
 
-Please use the following thread on insanelymac.com for feedback, questions, and help:
-http://www.insanelymac.com/forum/topic/286860-genericusbxhci-usb-30-driver-for-os-x-with-source/
+### Disclaimer
 
-### Known issues:
-
-- Might cause panics on 10.11/10.11.1; use 10.11.2+
-- xHCI controllers using this driver will not show up under System Information/USB in 10.11
-
-Support for xHCI controllers that have native support (Intel 7/8/9/100 Series / Fresco Logic FL1100) will eventually be removed from this driver.
-
-### Change Log:
-
-2015-12-13 (TheRacerMaster)
-
-- Reverted IOKit USB headers to 10.9 version
-- Added more errata for Fresco Logic FL1000 & VIA VL800/801
-- Binary only works on 10.11 for now
-
-2015-12-12 (TheRacerMaster)
-
-- Added 10.10 IOKit USB headers to allow building & fix support on 10.11+
-- Reorganized files in repo
-
-2015-10-02 (RehabMan)
-
-- The kext will now fail to load on 10.11+
-
-2014-10-16 (RehabMan)
-
-- Merged with latest Zenith432 version
-- Created new Universal build for compatibility with 10.7.5 through 10.10
-
-2013-03-23 (RehabMan)
-
-- Modified for single binary to work on ML, Lion (10.7.5 only)
-- Optimize build to reduce code size and exported symbols.
-
-2013-03-06 (Zenith432)
-
-- Initial build provided by Zenith432 on insanelymac.com
+I'm not affiliated nor part of Noot Inc., AMD OSX or any other hackintosh dev group, you should not nag them if you encounter issues with this kext. I'm just a hobbyist dev who decided to share my findings as I was affected by the USB3 issue personally.
+I also do not guarantee I'll keep working on this project as I might not have enough free time to do so.
 
 ### History
 
